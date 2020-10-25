@@ -124,13 +124,39 @@ class Euler extends HttpOperationController {
 
 class Fibonacci extends HttpOperationController {
     public void doWork() throws IOException, ServletException {
+        Integer number = getNumber("number", "I need a number to find its fibonacci");
+        if(number == null) return;
 
+        print("<!DOCTYPE html><html>");
+        print("<head><meta charset=\"UTF-8\"/><title>Fibonacci</title></head></head>");
+        print("<body><h1>" +  fib(number) + "</h1></body>");
+    }
+
+    private static Integer fib(Integer n) {
+        if ((n == 0) || (n == 1))
+            return n;
+        else
+            return fib(n - 1) + fib(n - 2);
     }
 }
 
 class RandomNumbers extends HttpOperationController {
     public void doWork() throws IOException, ServletException {
+        Integer number = getNumber("number", "I need a number with how many numbers you need");
+        if(number == null) return;
+        Integer min = getNumber("min", "I need a min number");
+        if(min == null) return;
+        Integer max = getNumber("max", "I need a max value");
+        if(max == null) return;
+        response.setContentType("application/json");
+        String result = "{ \"randoms\" : [";
 
+        for(int i = 0; i<number; i++){
+            result += (int)(Math.random() * ((max - min) + 1)) + min;
+            if(i != number-1) result+=", ";
+        }
+
+        print(result + "]}");
     }
 }
 
