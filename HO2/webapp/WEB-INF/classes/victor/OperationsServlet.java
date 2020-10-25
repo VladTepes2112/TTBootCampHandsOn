@@ -34,6 +34,7 @@ public final class OperationsServlet extends HttpServlet {
         PrintWriter writer = response.getWriter();
         String url = request.getRequestURL().toString();
         System.out.println("### " + url);
+
         String[] urlParts = url.split("operations");
         if(urlParts.length == 1){
             response.setContentType("application/json");
@@ -74,7 +75,17 @@ abstract class HttpOperationController {
         board.println(toPrint);
     }
 
-
+    protected Integer getNumber(String name, String error) throws IOException{
+        String n = request.getParameter(name);
+        Integer number;
+        try{
+            number = Integer.parseInt(n);
+        }catch (Exception e){
+            number = null;
+        }
+        if (number == null) response.sendError(403, error);
+        return number;
+    }
 
     public abstract void doWork() throws IOException, ServletException;
 }
@@ -82,39 +93,59 @@ abstract class HttpOperationController {
 
 class SquaredRoot extends HttpOperationController {
     public void doWork() throws IOException, ServletException {
+        Integer number = getNumber("number", "I need exactly one number to know the square root of");
+        if(number == null) return;
 
+        response.setContentType("application/json");
+        print("{ \"result\" : { \"origin\" : " + number + ", \"squareRoot\" : " + Math.sqrt(number) + "} }");
     }
 }
+
 class Power extends HttpOperationController {
     public void doWork() throws IOException, ServletException {
+        Integer number = getNumber("number", "I need exactly one number to know power of");
+        if(number == null) return;
 
+        response.setContentType("text/xml");
+        print("<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + "<result> <original>" + number + "</original> <power2>" + Math.pow(number, 2) + "</power2></result>");
     }
 }
+
 class Euler extends HttpOperationController {
     public void doWork() throws IOException, ServletException {
+        Integer number = getNumber("number", "I need exactly one number to calculate e^n");
+        if(number == null) return;
+
+        response.setContentType("application/json");
+        print("{ \"result\" : { \"origin\" : " + number + ", \"e^n\" : " + Math.exp(number) + "} }");
 
     }
 }
+
 class Fibonacci extends HttpOperationController {
     public void doWork() throws IOException, ServletException {
 
     }
 }
+
 class RandomNumbers extends HttpOperationController {
     public void doWork() throws IOException, ServletException {
 
     }
 }
+
 class Prime extends HttpOperationController {
     public void doWork() throws IOException, ServletException {
 
     }
 }
+
 class Division extends HttpOperationController {
     public void doWork() throws IOException, ServletException {
 
     }
 }
+
 class Binary extends HttpOperationController {
     public void doWork() throws IOException, ServletException {
 
