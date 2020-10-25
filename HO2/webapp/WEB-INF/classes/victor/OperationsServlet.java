@@ -42,7 +42,7 @@ public final class OperationsServlet extends HttpServlet {
             return;
         }
         String op = urlParts[1].split("/")[1];
-        System.out.println("###" + op);
+
         if(availableOperations.containsKey(op)){
             availableOperations.get(op).start(request, response, writer);
         }else{
@@ -50,15 +50,7 @@ public final class OperationsServlet extends HttpServlet {
         }
     }
 }
-/*
-*
-* response.setContentType("text/html");
-        response.setCharacterEncoding("UTF-8");
-response.setContentType("text/html");
 
-        out.println("<!DOCTYPE html><html>");
-        out.println("<head>");
-        out.println("<meta charset=\"UTF-8\" />");*/
 abstract class HttpOperationController {
     protected HttpServletRequest request;
     protected HttpServletResponse response;
@@ -83,13 +75,15 @@ abstract class HttpOperationController {
         }catch (Exception e){
             number = null;
         }
-        if (number == null) response.sendError(403, error);
+        if (number == null) {
+            response.sendError(403, error);
+            System.out.println("###Bad request, with the justification: " + error);
+        }
         return number;
     }
 
     public abstract void doWork() throws IOException, ServletException;
 }
-
 
 class SquaredRoot extends HttpOperationController {
     public void doWork() throws IOException, ServletException {
