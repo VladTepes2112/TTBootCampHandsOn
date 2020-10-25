@@ -9,6 +9,6 @@ That way we would learn how big of a problem spring was helping us with, I also 
 `docker run -it --rm -p 80:8080 hands_on_2`
 ###### Run container if you're going to do changes:
 `docker run -it --rm -p 80:8080 -v C:FullPath\HO2\webapp:/usr/local/tomcat/webapps/math-api hands_on_2`
-###### e.g: `docker run -it --rm -p 80:8080 -v C:\Users\victo\Documents\PersonalCode\DOCKER_RELATED\HANDS_HON\HO2\webapp:/usr/local/tomcat/webapps/math-api hands_on_2`
+###### e.g: `docker run -it --rm -p 80:8080 -v C:\Users\victo\Documents\PersonalCode\DOCKER_RELATED\TTBootCampHandsOn\HO2\webapp:/usr/local/tomcat/webapps/math-api hands_on_2`
 ###### Pre-Compile java classes (you need to be from the java directories):
 `javac8 -cp .;C:/apache-tomcat-8.5.45/lib/servlet-api.jar ./victor/*.java`

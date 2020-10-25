@@ -14,6 +14,7 @@ import java.util.HashMap;
 
 public final class OperationsServlet extends HttpServlet {
     private HashMap<String, HttpOperationController> availableOperations;
+
     public OperationsServlet() {
         availableOperations = new HashMap<String, HttpOperationController>();
         availableOperations.put("squared-root", new SquaredRoot());
@@ -29,34 +30,30 @@ public final class OperationsServlet extends HttpServlet {
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        response.setContentType("text/html");
+
         PrintWriter writer = response.getWriter();
-        writer.println("<html>");
-        writer.println("<head>");
-        writer.println("<title>Sample Application Servlet Page</title>");
-        writer.println("</head>");
-        writer.println("<body bgcolor=white>");
-        writer.println("<table border=\"0\">");
-        writer.println("<tr>");
-        writer.println("<td>");
-        writer.println("<img src=\"images/tomcat.gif\">");
-        writer.println("</td>");
-        writer.println("<td>");
-        writer.println("<h1>Sample Application Servlet</h1>");
-        writer.println("This is the output of a servlet that is part of");
-        writer.println("the Hello, World application.");
-        writer.println("</td>");
-        writer.println("</tr>");
-        writer.println("</table>");
-        writer.println("</body>");
-        writer.println("</html>");
+        String url = request.getRequestURL().toString();
+        System.out.println("### " + url);
+        String[] urlParts = url.split("operations");
+        if(urlParts.length == 1){
+            response.setContentType("application/json");
+            writer.println("{ \"operations\" : " + "[\"squared-root\", \"power\", \"euler\", \"fibonacci\", \"random-number\", \"prime\", \"division\", \"binary\"] }");
+            return;
+        }
+        String op = urlParts[1].split("/")[1];
+        System.out.println("###" + op);
+        if(availableOperations.containsKey(op)){
+            availableOperations.get(op).start(request, response, writer);
+        }else{
+            response.sendError(403, op + " is not an available option.");
+        }
     }
 }
 /*
 *
 * response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
-        PrintWriter out = response.getWriter();
+response.setContentType("text/html");
 
         out.println("<!DOCTYPE html><html>");
         out.println("<head>");
@@ -66,7 +63,7 @@ abstract class HttpOperationController {
     protected HttpServletResponse response;
     protected PrintWriter board;
 
-    public void start(HttpServletRequest request, HttpServletResponse response, PrintWriter board){
+    public void start(HttpServletRequest request, HttpServletResponse response, PrintWriter board) throws  IOException, ServletException{
         this.response = response;
         this.request = request;
         this.board = board;
@@ -74,10 +71,10 @@ abstract class HttpOperationController {
     }
 
     public void print(String toPrint){
-        out.println(toPrint)
+        board.println(toPrint);
     }
 
-    
+
 
     public abstract void doWork() throws IOException, ServletException;
 }

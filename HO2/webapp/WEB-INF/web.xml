@@ -17,7 +17,7 @@
 
     <servlet-mapping>
         <servlet-name>operations</servlet-name>
-        <url-pattern>/operations</url-pattern>
+        <url-pattern>/operations/*</url-pattern>
     </servlet-mapping>
 
 </web-app>
