@@ -1,0 +1,35 @@
+plugins {
+    id 'org.springframework.boot' version '2.3.4.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    id 'java'
+}
+
+group = 'com.victor'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile group: 'ch.qos.logback', name: 'logback-core', version: '1.2.3'
+    compile 'org.springframework.boot:spring-boot-starter-log4j2'
+    compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.29'
+    testCompile group: 'ch.qos.logback', name: 'logback-classic', version: '0.9.26'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+configurations {
+    all {
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+    }
+}

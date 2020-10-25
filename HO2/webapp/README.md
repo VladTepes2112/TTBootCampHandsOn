@@ -12,3 +12,5 @@ That way we would learn how big of a problem spring was helping us with, I also 
 ###### e.g: `docker run -it --rm -p 80:8080 -v C:\Users\victo\Documents\PersonalCode\DOCKER_RELATED\TTBootCampHandsOn\HO2\webapp:/usr/local/tomcat/webapps/math-api hands_on_2`
 ###### Pre-Compile java classes (you need to be from the java directories):
 `javac8 -cp .;C:/apache-tomcat-8.5.45/lib/servlet-api.jar ./victor/*.java`
+
+#### If you run it locally you it has to be in the folder "tomcat/webapps/math-api"
