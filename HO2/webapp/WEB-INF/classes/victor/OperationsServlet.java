@@ -162,18 +162,52 @@ class RandomNumbers extends HttpOperationController {
 
 class Prime extends HttpOperationController {
     public void doWork() throws IOException, ServletException {
+        Integer number = getNumber("number", "I need exactly one number to know if it´s a prime");
+        if (number == null) return;
 
+        response.setContentType("text/plain");
+        if (isPrime(number)) {
+            print("true");
+        } else {
+            print("false");
+        }
+    }
+
+    boolean isPrime(int number) {
+        if(number == 2) return true;
+        if (number%2==0 || number == 1) return false;
+
+        for(int i=3; i <= Math.sqrt(number) ; i+=2) {
+            if(number%i==0)
+                return false;
+        }
+        return true;
     }
 }
 
 class Division extends HttpOperationController {
     public void doWork() throws IOException, ServletException {
+        Integer divisor = getNumber("divisor", "I need a divisor to make the division");
+        if (divisor == null) return;
+        Integer dividend = getNumber("dividend", "I need a dividend to make the division");
+        if (dividend == null) return;
+        response.setContentType("application/json");
 
+        if(divisor == 0){
+            print("{ \"result\" : \"I'm sorry, but the world isn't ready for me to tell you that.\" }");
+        }else{
+            print("{ \"result\" : { \"quotient\" : " + dividend/divisor + ", \"remainder\" : " + dividend%divisor + "} }");
+        }
     }
 }
 
 class Binary extends HttpOperationController {
     public void doWork() throws IOException, ServletException {
+        Integer number = getNumber("number", "I need exactly one number to convert into binary");
+        if(number == null) return;
+
+        response.setContentType("text/xml");
+        print("<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + "<result> <original>" + number + "</original> <binary>" + Integer.toBinaryString(number) + "</binary></result>");
 
     }
 }
