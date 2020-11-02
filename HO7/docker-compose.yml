@@ -1,0 +1,35 @@
+version: '3'
+services:
+  products:
+    build: ./01_Products
+    ports:
+      - "44:44"
+    depends_on:
+      - "products_database"
+  products_database:
+    image: "mysql:5.7"
+    ports:
+      - "3307:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=hands_on_7
+      - MYSQL_USER=products_user
+      - MYSQL_PASSWORD=products_password
+
+  coupons:
+    build: ./02_Coupons
+    ports:
+      - "55:55"
+    depends_on:
+      - "coupons_database"
+
+  coupons_database:
+    image: "mysql:5.7"
+    ports:
+      - "3308:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=hands_on_7
+      - MYSQL_USER=coupons_user
+      - MYSQL_PASSWORD=coupons_password
+
