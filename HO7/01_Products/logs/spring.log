@@ -1,0 +1,5 @@
+2020-11-01 22:21:33.822 TRACE 10484 --- [http-nio-44-exec-1] c.v.h.c.ServiceCouponsClient             : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+2020-11-01 23:41:57.475  INFO 12180 --- [main] com.victor.hands_on_7.HandsOn7Products   : Starting HandsOn7Products on DESKTOP-VQ9U086 with PID 12180 (C:\Users\victo\Documents\PersonalCode\DOCKER_RELATED\TTBootCampHandsOn\HO7\01_Products\build\classes\java\main started by Víctor in C:\Users\victo\Documents\PersonalCode\DOCKER_RELATED\TTBootCampHandsOn\HO7\01_Products)
+2020-11-01 23:41:57.477 DEBUG 12180 --- [main] com.victor.hands_on_7.HandsOn7Products   : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-11-01 23:41:57.478  INFO 12180 --- [main] com.victor.hands_on_7.HandsOn7Products   : No active profile set, falling back to default profiles: default
+2020-11-01 23:42:00.313  INFO 12180 --- [main] com.victor.hands_on_7.HandsOn7Products   : Started HandsOn7Products in 3.206 seconds (JVM running for 4.227)

@@ -42,7 +42,8 @@ public class MainSecurity extends WebSecurityConfigurerAdapter {
     protected UserDetailsService userDetailsService() {
         UserDetails admin = User.builder().username("vinoth").password(passer.encode("12345")).roles("ADMIN", "CUSTOMER").build();
         UserDetails customer1 = User.builder().username("karen").password(passer.encode("trump2020")).roles("CUSTOMER").build();
-        return new InMemoryUserDetailsManager(admin, customer1);
+        UserDetails main_api_user = User.builder().username("home_user").password(passer.encode("home_password")).roles("CUSTOMER").build();
+        return new InMemoryUserDetailsManager(admin, customer1, main_api_user);
     }
 }
 /*

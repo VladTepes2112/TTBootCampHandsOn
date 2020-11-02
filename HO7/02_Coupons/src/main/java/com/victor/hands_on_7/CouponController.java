@@ -19,8 +19,11 @@ public class CouponController {
     @PostMapping(path="add")
     public @ResponseBody ResponseEntity<CouponEntity> addCoupon(@RequestBody CouponEntity couponEntity) {
         if(couponEntity.getId() != null)
-            if(couponREPO.existsById(couponEntity.getId()))
-                return new ResponseEntity<>(couponEntity, HttpStatus.ALREADY_REPORTED);
+            if(couponREPO.existsById(couponEntity.getId())) {
+                ResponseEntity<CouponEntity> result = new ResponseEntity<>(couponEntity, HttpStatus.ALREADY_REPORTED);
+
+                return result;
+            }
 
         couponREPO.save(couponEntity);
         return new ResponseEntity<>(couponEntity, HttpStatus.CREATED);
@@ -35,6 +38,18 @@ public class CouponController {
     public @ResponseBody ResponseEntity<CouponEntity> getProductById(@PathVariable int id) {
         Optional<CouponEntity> product = couponREPO.findById(id);
         if(product.isPresent()) return new ResponseEntity<>(product.get(), HttpStatus.FOUND);
+        return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+    }
+
+    @GetMapping(path="bycode/{code}")
+    public @ResponseBody ResponseEntity<CouponEntity> getCouponByCode(@PathVariable String code) {
+        Iterable<CouponEntity> all = couponREPO.findAll();
+        CouponEntity coupon = null;
+
+        for(CouponEntity a : all)
+            if(a.getCode().equals(code)) coupon = a;
+
+        if(coupon != null) return new ResponseEntity<>(coupon, HttpStatus.FOUND);
         return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
@@ -57,7 +72,8 @@ public class CouponController {
             couponREPO.deleteById(id);
             return new ResponseEntity<>(found.get(), HttpStatus.OK);
         }else{
-            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+            ResponseEntity<CouponEntity> couponEntityResponseEntity = new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+            return couponEntityResponseEntity;
         }
     }
 

@@ -29,7 +29,10 @@ public class MainSecurity extends WebSecurityConfigurerAdapter {
             .csrf().disable()
             .authorizeRequests()
                 .antMatchers("/").permitAll()
+                .antMatchers("/coupons/**").permitAll()
                 .antMatchers("/product/admin/**").hasRole("ADMIN")
+                .antMatchers("/product/all").permitAll()
+                .antMatchers("/product/byid/*").permitAll()
                 .antMatchers("/product/**").hasRole("CUSTOMER")
                 .anyRequest().authenticated().and().httpBasic();
         ;

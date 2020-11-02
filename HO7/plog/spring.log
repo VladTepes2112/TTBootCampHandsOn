@@ -1,0 +1,9 @@
+2020-11-02 04:47:06.104  INFO 1 --- [main] com.victor.hands_on_7.HandsOn7Products   : Starting HandsOn7Products on b4c772e740e4 with PID 1 (/app.jar started by root in /)
+2020-11-02 04:47:06.108 DEBUG 1 --- [main] com.victor.hands_on_7.HandsOn7Products   : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-11-02 04:47:06.110  INFO 1 --- [main] com.victor.hands_on_7.HandsOn7Products   : No active profile set, falling back to default profiles: default
+2020-11-02 04:47:35.487 TRACE 1 --- [http-nio-44-exec-2] c.v.h.c.ServiceCouponsClient             : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+2020-11-02 04:47:36.340  INFO 1 --- [main] com.victor.hands_on_7.HandsOn7Products   : Started HandsOn7Products in 30.873 seconds (JVM running for 31.646)
+2020-11-02 05:56:02.169  INFO 1 --- [main] com.victor.hands_on_7.HandsOn7Products   : Starting HandsOn7Products on 986261815f61 with PID 1 (/app.jar started by root in /)
+2020-11-02 05:56:02.175 DEBUG 1 --- [main] com.victor.hands_on_7.HandsOn7Products   : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-11-02 05:56:02.176  INFO 1 --- [main] com.victor.hands_on_7.HandsOn7Products   : No active profile set, falling back to default profiles: default
+2020-11-02 05:56:10.027  INFO 1 --- [main] com.victor.hands_on_7.HandsOn7Products   : Started HandsOn7Products in 8.482 seconds (JVM running for 9.303)

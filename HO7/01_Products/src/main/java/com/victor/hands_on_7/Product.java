@@ -57,4 +57,14 @@ public class Product {
     public void setLastUpdateTime(Date date) {
         this.lastUpdateTime = new java.sql.Date(Calendar.getInstance().getTime().getTime());
     }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", unitPrice=" + unitPrice +
+                ", lastUpdateTime=" + lastUpdateTime +
+                '}';
+    }
 }

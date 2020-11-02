@@ -1,0 +1,8 @@
+2020-11-02 04:47:06.132  INFO 1 --- [main] com.victor.hands_on_7.HandsOn7Coupon     : Starting HandsOn7Coupon on a979c9cb9ec3 with PID 1 (/app.jar started by root in /)
+2020-11-02 04:47:06.137 DEBUG 1 --- [main] com.victor.hands_on_7.HandsOn7Coupon     : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-11-02 04:47:06.141  INFO 1 --- [main] com.victor.hands_on_7.HandsOn7Coupon     : No active profile set, falling back to default profiles: default
+2020-11-02 04:47:34.205  INFO 1 --- [main] com.victor.hands_on_7.HandsOn7Coupon     : Started HandsOn7Coupon in 28.756 seconds (JVM running for 29.523)
+2020-11-02 05:56:02.052  INFO 1 --- [main] com.victor.hands_on_7.HandsOn7Coupon     : Starting HandsOn7Coupon on 753214c314c6 with PID 1 (/app.jar started by root in /)
+2020-11-02 05:56:02.056 DEBUG 1 --- [main] com.victor.hands_on_7.HandsOn7Coupon     : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-11-02 05:56:02.057  INFO 1 --- [main] com.victor.hands_on_7.HandsOn7Coupon     : No active profile set, falling back to default profiles: default
+2020-11-02 05:56:09.675  INFO 1 --- [main] com.victor.hands_on_7.HandsOn7Coupon     : Started HandsOn7Coupon in 8.265 seconds (JVM running for 8.959)
