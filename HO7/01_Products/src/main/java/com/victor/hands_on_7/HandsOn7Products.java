@@ -14,6 +14,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class HandsOn7Products {
 
     public static void main(String[] args) {
+//        System.exit(SpringApplication.exit(SpringApplication.run(HandsOn7Products.class, args)));
         SpringApplication.run(HandsOn7Products.class, args);
     }
 

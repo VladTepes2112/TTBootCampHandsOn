@@ -8,7 +8,27 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class CouponEntity {
+public class Coupon {
+
+    public Coupon() {
+    }
+
+    public Coupon(Integer id, String code, Integer productId, Double discount) {
+        this.id = id;
+        this.code = code;
+        this.productId = productId;
+        this.discount = discount;
+    }
+
+    @Override
+    public String toString() {
+        return "Coupon{" +
+                "id=" + id +
+                ", code='" + code + '\'' +
+                ", productId=" + productId +
+                ", discount=" + discount +
+                '}';
+    }
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)

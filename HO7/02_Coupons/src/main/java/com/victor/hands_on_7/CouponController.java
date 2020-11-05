@@ -1,80 +1,80 @@
 package com.victor.hands_on_7;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-
-import javax.annotation.security.RolesAllowed;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("coupon")
 public class CouponController {
 
-    @Autowired
-    private couponREPO couponREPO;
+    private static final Logger log = LoggerFactory.getLogger(CouponController.class);
+    private final CouponsService coupons;
+
+    public CouponController(@Autowired CouponsService coupons) {
+        this.coupons = coupons;
+    }
 
     @PostMapping(path="add")
-    public @ResponseBody ResponseEntity<CouponEntity> addCoupon(@RequestBody CouponEntity couponEntity) {
-        if(couponEntity.getId() != null)
-            if(couponREPO.existsById(couponEntity.getId())) {
-                ResponseEntity<CouponEntity> result = new ResponseEntity<>(couponEntity, HttpStatus.ALREADY_REPORTED);
-
-                return result;
-            }
-
-        couponREPO.save(couponEntity);
-        return new ResponseEntity<>(couponEntity, HttpStatus.CREATED);
+    public @ResponseBody ResponseEntity<Coupon> addCoupon(@RequestBody Coupon coupon) {
+        log.trace("Added: " + coupon);
+        Coupon existentC = coupons.addCoupon(coupon);
+        if(existentC == null) {
+            log.trace("Already existed " + HttpStatus.ALREADY_REPORTED + " id = " + coupon.getId());
+            return new ResponseEntity<>(existentC, HttpStatus.ALREADY_REPORTED);
+        }
+        log.trace("Saved: " + existentC + " " + HttpStatus.CREATED);
+        return new ResponseEntity<>(existentC, HttpStatus.CREATED);
     }
 
     @GetMapping(path="all")
-    public @ResponseBody ResponseEntity<Iterable<CouponEntity>> getAllUsers() {
-        return new ResponseEntity<>(couponREPO.findAll(), HttpStatus.OK);
+    public @ResponseBody ResponseEntity<Iterable<Coupon>> getAllCoupons() {
+        Iterable<Coupon> results = coupons.getAllCoupons();
+        log.trace("FOUNDED COUPONS! " );
+        return new ResponseEntity<>(results, HttpStatus.OK);
     }
 
     @GetMapping(path="byid/{id}")
-    public @ResponseBody ResponseEntity<CouponEntity> getProductById(@PathVariable int id) {
-        Optional<CouponEntity> product = couponREPO.findById(id);
-        if(product.isPresent()) return new ResponseEntity<>(product.get(), HttpStatus.FOUND);
+    public @ResponseBody ResponseEntity<Coupon> getProductById(@PathVariable int id) {
+        Coupon c = coupons.getCouponByID(id);
+        if(c != null) {
+            log.trace("RETURNED <" + c + "> httpS: " + HttpStatus.OK);
+            return new ResponseEntity<>(c, HttpStatus.OK);
+        }
+        log.trace("NOT FOUND -> " + id);
         return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
     @GetMapping(path="bycode/{code}")
-    public @ResponseBody ResponseEntity<CouponEntity> getCouponByCode(@PathVariable String code) {
-        Iterable<CouponEntity> all = couponREPO.findAll();
-        CouponEntity coupon = null;
+    public @ResponseBody ResponseEntity<Coupon> getCouponByCode(@PathVariable String code) {
+        Iterable<Coupon> all = coupons.getAllCoupons();
+        Coupon coupon = null;
 
-        for(CouponEntity a : all)
+        for(Coupon a : all)
             if(a.getCode().equals(code)) coupon = a;
 
-        if(coupon != null) return new ResponseEntity<>(coupon, HttpStatus.FOUND);
+        if(coupon != null) return new ResponseEntity<>(coupon, HttpStatus.OK);
         return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
     @GetMapping(path="discount/bycode/{code}")
     public @ResponseBody ResponseEntity<Double> getDiscountByCode(@PathVariable String code) {
-        Iterable<CouponEntity> all = couponREPO.findAll();
-        CouponEntity product = null;
+        Coupon result = coupons.getCouponByCode(code);
 
-        for(CouponEntity a : all)
-            if(a.getCode().equals(code)) product = a;
-
-        if(product != null) return new ResponseEntity<>(product.getDiscount(), HttpStatus.FOUND);
+        if(result != null) return new ResponseEntity<>(result.getDiscount(), HttpStatus.OK);
         return new ResponseEntity<>(0.0, HttpStatus.NOT_FOUND);
     }
 
     @DeleteMapping(path = "/product/delete/{id}")
-    public @ResponseBody ResponseEntity<CouponEntity> deleteById(@PathVariable int id){
-        Optional<CouponEntity> found = couponREPO.findById(id);
-        if(found.isPresent()) {
-            couponREPO.deleteById(id);
-            return new ResponseEntity<>(found.get(), HttpStatus.OK);
-        }else{
-            ResponseEntity<CouponEntity> couponEntityResponseEntity = new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
-            return couponEntityResponseEntity;
+    public @ResponseBody ResponseEntity<Coupon> deleteById(@PathVariable int id){
+        if(coupons.existsById(id)) {
+            Coupon coupon = coupons.deleteById(id);
+            return new ResponseEntity<>(coupon, HttpStatus.OK);
         }
+        return null;
     }
 
 }

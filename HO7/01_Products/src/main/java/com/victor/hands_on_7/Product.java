@@ -1,8 +1,6 @@
 package com.victor.hands_on_7;
 
 import com.sun.istack.NotNull;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,6 +11,29 @@ import java.util.Calendar;
 
 @Entity
 public class Product {
+
+    public Product() {
+    }
+
+    public Product(String name, Double unitPrice) {
+        this.name = name;
+        this.unitPrice = unitPrice;
+        this.setLastUpdateTime(null);
+    }
+
+    public Product(Integer id, String name, Double unitPrice, Date lastUpdateTime) {
+        this.id = id;
+        this.name = name;
+        this.unitPrice = unitPrice;
+        this.lastUpdateTime = lastUpdateTime;
+    }
+
+    public Product(Integer id, String name, Double unitPrice) {
+        this.id = id;
+        this.name = name;
+        this.unitPrice = unitPrice;
+        this.setLastUpdateTime(null);
+    }
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)

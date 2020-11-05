@@ -1,5 +1,71 @@
-2020-11-01 22:21:33.822 TRACE 10484 --- [http-nio-44-exec-1] c.v.h.c.ServiceCouponsClient             : AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-2020-11-01 23:41:57.475  INFO 12180 --- [main] com.victor.hands_on_7.HandsOn7Products   : Starting HandsOn7Products on DESKTOP-VQ9U086 with PID 12180 (C:\Users\victo\Documents\PersonalCode\DOCKER_RELATED\TTBootCampHandsOn\HO7\01_Products\build\classes\java\main started by Víctor in C:\Users\victo\Documents\PersonalCode\DOCKER_RELATED\TTBootCampHandsOn\HO7\01_Products)
-2020-11-01 23:41:57.477 DEBUG 12180 --- [main] com.victor.hands_on_7.HandsOn7Products   : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
-2020-11-01 23:41:57.478  INFO 12180 --- [main] com.victor.hands_on_7.HandsOn7Products   : No active profile set, falling back to default profiles: default
-2020-11-01 23:42:00.313  INFO 12180 --- [main] com.victor.hands_on_7.HandsOn7Products   : Started HandsOn7Products in 3.206 seconds (JVM running for 4.227)
+2020-11-02 10:46:22.498  INFO 11112 --- [main] com.victor.hands_on_7.HandsOn7Products   : Starting HandsOn7Products on DESKTOP-VQ9U086 with PID 11112 (C:\Users\victo\Documents\PersonalCode\DOCKER_RELATED\TTBootCampHandsOn\HO7\01_Products\build\classes\java\main started by Víctor in C:\Users\victo\Documents\PersonalCode\DOCKER_RELATED\TTBootCampHandsOn\HO7\01_Products)
+2020-11-02 10:46:22.506 DEBUG 11112 --- [main] com.victor.hands_on_7.HandsOn7Products   : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-11-02 10:46:22.509  INFO 11112 --- [main] com.victor.hands_on_7.HandsOn7Products   : No active profile set, falling back to default profiles: default
+2020-11-02 10:46:27.415 ERROR 11112 --- [task-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+2020-11-02 12:01:08.982  INFO 5292 --- [main] com.victor.hands_on_7.HandsOn7Products   : Starting HandsOn7Products on DESKTOP-VQ9U086 with PID 5292 (C:\Users\victo\Documents\PersonalCode\DOCKER_RELATED\TTBootCampHandsOn\HO7\01_Products\build\classes\java\main started by Víctor in C:\Users\victo\Documents\PersonalCode\DOCKER_RELATED\TTBootCampHandsOn\HO7\01_Products)
+2020-11-02 12:01:08.984 DEBUG 5292 --- [main] com.victor.hands_on_7.HandsOn7Products   : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-11-02 12:01:08.985  INFO 5292 --- [main] com.victor.hands_on_7.HandsOn7Products   : No active profile set, falling back to default profiles: default
+2020-11-02 12:01:11.611  INFO 5292 --- [main] com.victor.hands_on_7.HandsOn7Products   : Started HandsOn7Products in 2.904 seconds (JVM running for 3.677)
+2020-11-02 12:01:11.856  INFO 5292 --- [main] .v.h.b.JobCompletionNotificationListener : !!! JOB FINISHED! Time to verify the results
+2020-11-02 12:01:11.859  INFO 5292 --- [main] .v.h.b.JobCompletionNotificationListener : Found <Product{id=1, name='CocaCola1', unitPrice=20.0, lastUpdateTime=2020-11-02}> in the database.
+2020-11-02 12:01:11.859  INFO 5292 --- [main] .v.h.b.JobCompletionNotificationListener : Found <Product{id=2, name='BicCocaCo', unitPrice=90.0, lastUpdateTime=2020-11-02}> in the database.
+2020-11-02 12:01:11.859  INFO 5292 --- [main] .v.h.b.JobCompletionNotificationListener : Found <Product{id=3, name='SmolCocaC', unitPrice=10.0, lastUpdateTime=2020-11-02}> in the database.
+2020-11-02 12:01:11.859  INFO 5292 --- [main] .v.h.b.JobCompletionNotificationListener : Found <Product{id=4, name='MediumCoc', unitPrice=69.42, lastUpdateTime=2020-11-02}> in the database.
+2020-11-02 12:01:11.860  INFO 5292 --- [main] .v.h.b.JobCompletionNotificationListener : Found <Product{id=5, name='CocaButPe', unitPrice=38.0, lastUpdateTime=2020-11-02}> in the database.
+2020-11-02 12:01:11.860  INFO 5292 --- [main] .v.h.b.JobCompletionNotificationListener : Found <Product{id=6, name='PeButCoca', unitPrice=96.0, lastUpdateTime=2020-11-02}> in the database.
+2020-11-02 12:01:11.860  INFO 5292 --- [main] .v.h.b.JobCompletionNotificationListener : Found <Product{id=7, name='ReallyLik', unitPrice=50.0, lastUpdateTime=2020-11-02}> in the database.
+2020-11-02 12:01:11.860  INFO 5292 --- [main] .v.h.b.JobCompletionNotificationListener : Found <Product{id=8, name='eCocaCola', unitPrice=20.0, lastUpdateTime=2020-11-02}> in the database.
+2020-11-02 12:01:11.860  INFO 5292 --- [main] .v.h.b.JobCompletionNotificationListener : Found <Product{id=9, name='xDColaCoc', unitPrice=20.0, lastUpdateTime=2020-11-02}> in the database.
+2020-11-02 12:02:16.769 TRACE 5292 --- [http-nio-44-exec-1] c.v.h.c.ServiceCouponsClient             : products sent200 OK
+2020-11-02 12:04:29.038  INFO 18944 --- [main] com.victor.hands_on_7.HandsOn7Products   : Starting HandsOn7Products on DESKTOP-VQ9U086 with PID 18944 (C:\Users\victo\Documents\PersonalCode\DOCKER_RELATED\TTBootCampHandsOn\HO7\01_Products\build\classes\java\main started by Víctor in C:\Users\victo\Documents\PersonalCode\DOCKER_RELATED\TTBootCampHandsOn\HO7\01_Products)
+2020-11-02 12:04:29.040 DEBUG 18944 --- [main] com.victor.hands_on_7.HandsOn7Products   : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-11-02 12:04:29.040  INFO 18944 --- [main] com.victor.hands_on_7.HandsOn7Products   : No active profile set, falling back to default profiles: default
+2020-11-02 12:04:31.598  INFO 18944 --- [main] com.victor.hands_on_7.HandsOn7Products   : Started HandsOn7Products in 2.838 seconds (JVM running for 3.584)
+2020-11-02 12:04:31.872  INFO 18944 --- [main] .v.h.b.JobCompletionNotificationListener : !!! JOB FINISHED! Time to verify the results
+2020-11-02 12:04:31.876  INFO 18944 --- [main] .v.h.b.JobCompletionNotificationListener : Found <Product{id=1, name='CocaCola1', unitPrice=20.0, lastUpdateTime=2020-11-02}> in the database.
+2020-11-02 12:04:31.876  INFO 18944 --- [main] .v.h.b.JobCompletionNotificationListener : Found <Product{id=2, name='BicCocaCo', unitPrice=90.0, lastUpdateTime=2020-11-02}> in the database.
+2020-11-02 12:04:31.876  INFO 18944 --- [main] .v.h.b.JobCompletionNotificationListener : Found <Product{id=3, name='SmolCocaC', unitPrice=10.0, lastUpdateTime=2020-11-02}> in the database.
+2020-11-02 12:04:31.876  INFO 18944 --- [main] .v.h.b.JobCompletionNotificationListener : Found <Product{id=4, name='MediumCoc', unitPrice=69.42, lastUpdateTime=2020-11-02}> in the database.
+2020-11-02 12:04:31.876  INFO 18944 --- [main] .v.h.b.JobCompletionNotificationListener : Found <Product{id=5, name='CocaButPe', unitPrice=38.0, lastUpdateTime=2020-11-02}> in the database.
+2020-11-02 12:04:31.877  INFO 18944 --- [main] .v.h.b.JobCompletionNotificationListener : Found <Product{id=6, name='PeButCoca', unitPrice=96.0, lastUpdateTime=2020-11-02}> in the database.
+2020-11-02 12:04:31.877  INFO 18944 --- [main] .v.h.b.JobCompletionNotificationListener : Found <Product{id=7, name='ReallyLik', unitPrice=50.0, lastUpdateTime=2020-11-02}> in the database.
+2020-11-02 12:04:31.877  INFO 18944 --- [main] .v.h.b.JobCompletionNotificationListener : Found <Product{id=8, name='eCocaCola', unitPrice=20.0, lastUpdateTime=2020-11-02}> in the database.
+2020-11-02 12:04:31.877  INFO 18944 --- [main] .v.h.b.JobCompletionNotificationListener : Found <Product{id=9, name='xDColaCoc', unitPrice=20.0, lastUpdateTime=2020-11-02}> in the database.
+2020-11-02 12:04:50.332  INFO 22244 --- [main] com.victor.hands_on_7.HandsOn7Products   : Starting HandsOn7Products on DESKTOP-VQ9U086 with PID 22244 (C:\Users\victo\Documents\PersonalCode\DOCKER_RELATED\TTBootCampHandsOn\HO7\01_Products\build\classes\java\main started by Víctor in C:\Users\victo\Documents\PersonalCode\DOCKER_RELATED\TTBootCampHandsOn\HO7\01_Products)
+2020-11-02 12:04:50.334 DEBUG 22244 --- [main] com.victor.hands_on_7.HandsOn7Products   : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-11-02 12:04:50.334  INFO 22244 --- [main] com.victor.hands_on_7.HandsOn7Products   : No active profile set, falling back to default profiles: default
+2020-11-02 12:04:53.257  INFO 22244 --- [main] com.victor.hands_on_7.HandsOn7Products   : Started HandsOn7Products in 3.2 seconds (JVM running for 3.953)
+2020-11-02 12:04:53.476  INFO 22244 --- [main] .v.h.b.JobCompletionNotificationListener : !!! JOB FINISHED! Time to verify the results
+2020-11-02 12:04:53.479  INFO 22244 --- [main] .v.h.b.JobCompletionNotificationListener : Found <Product{id=1, name='CocaCola1', unitPrice=20.0, lastUpdateTime=2020-11-02}> in the database.
+2020-11-02 12:04:53.479  INFO 22244 --- [main] .v.h.b.JobCompletionNotificationListener : Found <Product{id=2, name='BicCocaCo', unitPrice=90.0, lastUpdateTime=2020-11-02}> in the database.
+2020-11-02 12:04:53.479  INFO 22244 --- [main] .v.h.b.JobCompletionNotificationListener : Found <Product{id=3, name='SmolCocaC', unitPrice=10.0, lastUpdateTime=2020-11-02}> in the database.
+2020-11-02 12:04:53.479  INFO 22244 --- [main] .v.h.b.JobCompletionNotificationListener : Found <Product{id=4, name='MediumCoc', unitPrice=69.42, lastUpdateTime=2020-11-02}> in the database.
+2020-11-02 12:04:53.479  INFO 22244 --- [main] .v.h.b.JobCompletionNotificationListener : Found <Product{id=5, name='CocaButPe', unitPrice=38.0, lastUpdateTime=2020-11-02}> in the database.
+2020-11-02 12:04:53.479  INFO 22244 --- [main] .v.h.b.JobCompletionNotificationListener : Found <Product{id=6, name='PeButCoca', unitPrice=96.0, lastUpdateTime=2020-11-02}> in the database.
+2020-11-02 12:04:53.479  INFO 22244 --- [main] .v.h.b.JobCompletionNotificationListener : Found <Product{id=7, name='ReallyLik', unitPrice=50.0, lastUpdateTime=2020-11-02}> in the database.
+2020-11-02 12:04:53.479  INFO 22244 --- [main] .v.h.b.JobCompletionNotificationListener : Found <Product{id=8, name='eCocaCola', unitPrice=20.0, lastUpdateTime=2020-11-02}> in the database.
+2020-11-02 12:04:53.480  INFO 22244 --- [main] .v.h.b.JobCompletionNotificationListener : Found <Product{id=9, name='xDColaCoc', unitPrice=20.0, lastUpdateTime=2020-11-02}> in the database.
+2020-11-02 12:05:40.273  INFO 16764 --- [main] com.victor.hands_on_7.HandsOn7Products   : Starting HandsOn7Products on DESKTOP-VQ9U086 with PID 16764 (C:\Users\victo\Documents\PersonalCode\DOCKER_RELATED\TTBootCampHandsOn\HO7\01_Products\build\classes\java\main started by Víctor in C:\Users\victo\Documents\PersonalCode\DOCKER_RELATED\TTBootCampHandsOn\HO7\01_Products)
+2020-11-02 12:05:40.275 DEBUG 16764 --- [main] com.victor.hands_on_7.HandsOn7Products   : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-11-02 12:05:40.275  INFO 16764 --- [main] com.victor.hands_on_7.HandsOn7Products   : No active profile set, falling back to default profiles: default
+2020-11-02 12:05:42.924  INFO 16764 --- [main] com.victor.hands_on_7.HandsOn7Products   : Started HandsOn7Products in 2.926 seconds (JVM running for 3.782)
+2020-11-02 12:05:43.162  INFO 16764 --- [main] .v.h.b.JobCompletionNotificationListener : !!! JOB FINISHED! Time to verify the results
+2020-11-02 12:05:43.164  INFO 16764 --- [main] .v.h.b.JobCompletionNotificationListener : Found <Product{id=1, name='CocaCola1', unitPrice=20.0, lastUpdateTime=2020-11-02}> in the database.
+2020-11-02 12:05:43.164  INFO 16764 --- [main] .v.h.b.JobCompletionNotificationListener : Found <Product{id=2, name='BicCocaCo', unitPrice=90.0, lastUpdateTime=2020-11-02}> in the database.
+2020-11-02 12:05:43.164  INFO 16764 --- [main] .v.h.b.JobCompletionNotificationListener : Found <Product{id=3, name='SmolCocaC', unitPrice=10.0, lastUpdateTime=2020-11-02}> in the database.
+2020-11-02 12:05:43.164  INFO 16764 --- [main] .v.h.b.JobCompletionNotificationListener : Found <Product{id=4, name='MediumCoc', unitPrice=69.42, lastUpdateTime=2020-11-02}> in the database.
+2020-11-02 12:05:43.164  INFO 16764 --- [main] .v.h.b.JobCompletionNotificationListener : Found <Product{id=5, name='CocaButPe', unitPrice=38.0, lastUpdateTime=2020-11-02}> in the database.
+2020-11-02 12:05:43.164  INFO 16764 --- [main] .v.h.b.JobCompletionNotificationListener : Found <Product{id=6, name='PeButCoca', unitPrice=96.0, lastUpdateTime=2020-11-02}> in the database.
+2020-11-02 12:05:43.164  INFO 16764 --- [main] .v.h.b.JobCompletionNotificationListener : Found <Product{id=7, name='ReallyLik', unitPrice=50.0, lastUpdateTime=2020-11-02}> in the database.
+2020-11-02 12:05:43.165  INFO 16764 --- [main] .v.h.b.JobCompletionNotificationListener : Found <Product{id=8, name='eCocaCola', unitPrice=20.0, lastUpdateTime=2020-11-02}> in the database.
+2020-11-02 12:05:43.165  INFO 16764 --- [main] .v.h.b.JobCompletionNotificationListener : Found <Product{id=9, name='xDColaCoc', unitPrice=20.0, lastUpdateTime=2020-11-02}> in the database.
+2020-11-02 12:05:49.642 TRACE 16764 --- [http-nio-44-exec-2] c.victor.hands_on_7.ProductsController   : products sent 200 OK
+2020-11-02 12:05:49.750  INFO 16764 --- [http-nio-44-exec-2] c.victor.hands_on_7.ProductsController   : Returned <Product{id=1, name='CocaCola1', unitPrice=20.0, lastUpdateTime=2020-11-02}> 
+2020-11-02 12:05:49.750  INFO 16764 --- [http-nio-44-exec-2] c.victor.hands_on_7.ProductsController   : Returned <Product{id=2, name='BicCocaCo', unitPrice=90.0, lastUpdateTime=2020-11-02}> 
+2020-11-02 12:05:49.750  INFO 16764 --- [http-nio-44-exec-2] c.victor.hands_on_7.ProductsController   : Returned <Product{id=3, name='SmolCocaC', unitPrice=10.0, lastUpdateTime=2020-11-02}> 
+2020-11-02 12:05:49.750  INFO 16764 --- [http-nio-44-exec-2] c.victor.hands_on_7.ProductsController   : Returned <Product{id=4, name='MediumCoc', unitPrice=69.42, lastUpdateTime=2020-11-02}> 
+2020-11-02 12:05:49.750  INFO 16764 --- [http-nio-44-exec-2] c.victor.hands_on_7.ProductsController   : Returned <Product{id=5, name='CocaButPe', unitPrice=38.0, lastUpdateTime=2020-11-02}> 
+2020-11-02 12:05:49.750  INFO 16764 --- [http-nio-44-exec-2] c.victor.hands_on_7.ProductsController   : Returned <Product{id=6, name='PeButCoca', unitPrice=96.0, lastUpdateTime=2020-11-02}> 
+2020-11-02 12:05:49.750  INFO 16764 --- [http-nio-44-exec-2] c.victor.hands_on_7.ProductsController   : Returned <Product{id=7, name='ReallyLik', unitPrice=50.0, lastUpdateTime=2020-11-02}> 
+2020-11-02 12:05:49.751  INFO 16764 --- [http-nio-44-exec-2] c.victor.hands_on_7.ProductsController   : Returned <Product{id=8, name='eCocaCola', unitPrice=20.0, lastUpdateTime=2020-11-02}> 
+2020-11-02 12:05:49.751  INFO 16764 --- [http-nio-44-exec-2] c.victor.hands_on_7.ProductsController   : Returned <Product{id=9, name='xDColaCoc', unitPrice=20.0, lastUpdateTime=2020-11-02}> 
