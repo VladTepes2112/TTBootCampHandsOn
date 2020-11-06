@@ -11,7 +11,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
-
+//Comment this two annotations to run the tests
 @Configuration
 @EnableWebSecurity
 public class MainSecurity extends WebSecurityConfigurerAdapter {

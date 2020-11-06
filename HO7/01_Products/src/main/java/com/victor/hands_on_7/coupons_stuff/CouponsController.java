@@ -12,12 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.xml.ws.Response;
 
-/*
-I'm not sure about this part, this is more or less all it takes to fulfill the diagram
-This endpoints are here because in the given diagram the only way to interact with the coupons is trough products api.
-
-Not sure if in the diagram there's some hidden thing interacting with Coupon service to add coupons (diagram doesn't show that happening anyway so I'll assume so).
- */
 
 @RestController
 @RequestMapping("coupons")

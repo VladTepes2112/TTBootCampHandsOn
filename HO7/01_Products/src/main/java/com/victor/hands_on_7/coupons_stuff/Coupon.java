@@ -4,6 +4,17 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Coupon {
+
+    public Coupon(String code, Integer productId, Double discount) {
+        this.id = id;
+        this.code = code;
+        this.productId = productId;
+        this.discount = discount;
+    }
+
+    public Coupon() {
+    }
+
     private Integer id;
 
     private String code;

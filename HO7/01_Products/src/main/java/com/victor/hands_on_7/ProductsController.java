@@ -10,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.Optional;
 
 @RestController
 public class ProductsController {
@@ -75,16 +74,16 @@ public class ProductsController {
     }
 
     @GetMapping(path="/product/price")
-    public @ResponseBody ResponseEntity<Product> getFinalPrice(@RequestParam int productId, @RequestParam String discountCode) {
+    public @ResponseBody ResponseEntity<Product> getFinalPrice(@RequestParam int productId, @RequestParam(defaultValue= "") String discountCode) {
         Product product = products.getProductById(productId);
         if(product == null) {
             log.trace("Product not found " + HttpStatus.NOT_FOUND);
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
         Double discount = 0.0;
-        if(discountCode != null) {
+        if(!discountCode.isEmpty()) {
             Coupon coupon = cuponer.getCouponByCode(discountCode);
-            if (coupon.getProductId() == productId){
+            if (coupon != null && coupon.getProductId() == productId){
                 discount = coupon.getDiscount() != null ? coupon.getDiscount() : 0;
             }
         }
@@ -107,7 +106,7 @@ public class ProductsController {
 
     @GetMapping(path="/product/byname/{name}")
     public @ResponseBody ResponseEntity<Iterable<Product>> getProductByName(@PathVariable String name) {
-        ArrayList<Product> cases = products.getProductByName(name);
+        ArrayList<Product> cases = products.getProductsByName(name);
         if(cases.size() > 0) {
             log.trace("PRODUCT RETURNED WITH STATUS: " + HttpStatus.FOUND);
             return new ResponseEntity<>(cases, HttpStatus.FOUND);

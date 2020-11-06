@@ -48,7 +48,7 @@ public class ProductsService {
         return null;
     }
 
-    public ArrayList<Product> getProductByName(String name) {
+    public ArrayList<Product> getProductsByName(String name) {
         Iterable<Product> allProducts = getAllProducts();
         ArrayList<Product> cases = new ArrayList<>();
         allProducts.forEach(productTemp -> {
